@@ -1,4 +1,4 @@
-package de.ticketsystem.webtech.service;
+package de.ticketsystem.webtech.unternehmen;
 
 import jakarta.persistence.*;
 
