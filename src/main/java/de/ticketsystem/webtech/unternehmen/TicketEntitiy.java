@@ -11,7 +11,7 @@ public class TicketEntitiy {
     private Long id;
 
     @Column(name = "ticketnummer", nullable = false, unique = true)
-    private String ticketnummer;
+    private Long ticketnummer;
 
     @Column(name = "betreff", nullable = false)
     private String betreff;
@@ -22,7 +22,7 @@ public class TicketEntitiy {
     @Column(name = "status")
     private String status;
 
-    public TicketEntitiy(Long id, String ticketnummer, String betreff, String nachricht, String status){
+    public TicketEntitiy(Long id, Long ticketnummer, String betreff, String nachricht, String status){
         this.id = id;
         this.ticketnummer = ticketnummer;
         this.betreff = betreff;
@@ -36,11 +36,11 @@ public class TicketEntitiy {
         return id;
     }
 
-    public String getTicketnummer() {
+    public Long getTicketnummer() {
         return ticketnummer;
     }
 
-    public void setTicketnummer(String ticketnummer) {
+    public void setTicketnummer(Long ticketnummer) {
         this.ticketnummer = ticketnummer;
     }
 
