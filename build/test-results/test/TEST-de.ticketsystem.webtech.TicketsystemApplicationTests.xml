@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="de.ticketsystem.webtech.TicketsystemApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-29T14:57:53" hostname="DESKTOP-D8Q389J" time="14.392">
+<testsuite name="de.ticketsystem.webtech.TicketsystemApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-10T18:37:50" hostname="MacBook-Pro-2.fritz.box" time="0.326">
   <properties/>
-  <testcase name="contextLoads()" classname="de.ticketsystem.webtech.TicketsystemApplicationTests" time="14.392"/>
-  <system-out><![CDATA[15:57:40.545 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [de.ticketsystem.webtech.TicketsystemApplicationTests]: TicketsystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:57:41.008 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration de.ticketsystem.webtech.TicketsystemApplication for test class de.ticketsystem.webtech.TicketsystemApplicationTests
+  <testcase name="contextLoads()" classname="de.ticketsystem.webtech.TicketsystemApplicationTests" time="0.326"/>
+  <system-out><![CDATA[19:37:49.264 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [de.ticketsystem.webtech.TicketsystemApplicationTests]: TicketsystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:37:49.322 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration de.ticketsystem.webtech.TicketsystemApplication for test class de.ticketsystem.webtech.TicketsystemApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,15 +13,28 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.5)
 
-2023-10-29T15:57:42.947+01:00  INFO 7892 --- [    Test worker] d.t.w.TicketsystemApplicationTests       : Starting TicketsystemApplicationTests using Java 17.0.1 with PID 7892 (started by zeren in C:\Users\zeren\Dokumente\Wirtschaftsinformatik\5Semester\Webtechnologien\ticketsystem\ticketsystem)
-2023-10-29T15:57:42.953+01:00  INFO 7892 --- [    Test worker] d.t.w.TicketsystemApplicationTests       : No active profile set, falling back to 1 default profile: "default"
-2023-10-29T15:57:45.901+01:00  INFO 7892 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2023-10-29T15:57:45.983+01:00  INFO 7892 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 0 JDBC repository interfaces.
-2023-10-29T15:57:50.153+01:00  INFO 7892 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-29T15:57:51.318+01:00  INFO 7892 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2023-10-29T15:57:51.334+01:00  INFO 7892 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-29T15:57:52.415+01:00  INFO 7892 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2023-10-29T15:57:52.920+01:00  INFO 7892 --- [    Test worker] d.t.w.TicketsystemApplicationTests       : Started TicketsystemApplicationTests in 10.912 seconds (process running for 16.851)
+2024-01-10T19:37:49.545+01:00  INFO 56167 --- [    Test worker] d.t.w.TicketsystemApplicationTests       : Starting TicketsystemApplicationTests using Java 17.0.5 with PID 56167 (started by macos in /Users/macos/Documents/Programmieren/Webtechnologien/ticketsystem)
+2024-01-10T19:37:49.546+01:00  INFO 56167 --- [    Test worker] d.t.w.TicketsystemApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2024-01-10T19:37:49.840+01:00  INFO 56167 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-01-10T19:37:49.841+01:00  INFO 56167 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-01-10T19:37:49.863+01:00  INFO 56167 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface de.ticketsystem.webtech.repository.MitarbeiterRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-01-10T19:37:49.863+01:00  INFO 56167 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
+2024-01-10T19:37:49.874+01:00  INFO 56167 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-01-10T19:37:49.874+01:00  INFO 56167 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-10T19:37:49.887+01:00  INFO 56167 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interfaces.
+2024-01-10T19:37:50.052+01:00  INFO 56167 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-10T19:37:50.131+01:00  INFO 56167 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-01-10T19:37:50.132+01:00  INFO 56167 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-10T19:37:50.151+01:00  INFO 56167 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-10T19:37:50.173+01:00  INFO 56167 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-01-10T19:37:50.174+01:00  INFO 56167 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-01-10T19:37:50.286+01:00  INFO 56167 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-10T19:37:50.303+01:00  WARN 56167 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-10T19:37:50.629+01:00  INFO 56167 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-10T19:37:50.645+01:00  INFO 56167 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-10T19:37:50.794+01:00  WARN 56167 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-10T19:37:50.960+01:00  INFO 56167 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-01-10T19:37:50.982+01:00  INFO 56167 --- [    Test worker] d.t.w.TicketsystemApplicationTests       : Started TicketsystemApplicationTests in 1.571 seconds (process running for 2.184)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
