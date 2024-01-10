@@ -2,12 +2,12 @@ package de.ticketsystem.webtech.web.api;
 
 public class Ticket {
     private long id;
-    private Long ticketnummer;
+    private String ticketnummer;
     private String betreff;
     private String nachricht;
     private String status;
 
-    public Ticket(Long id, Long ticketnummer, String betreff, String nachricht, String status){
+    public Ticket(Long id, String ticketnummer, String betreff, String nachricht, String status){
         this.id = id;
         this.ticketnummer = ticketnummer;
         this.betreff = betreff;
@@ -23,11 +23,11 @@ public class Ticket {
         this.id = id;
     }
 
-    public Long getTicketnummer() {
+    public String getTicketnummer() {
         return ticketnummer;
     }
 
-    public void setTicketnummer(Long ticketnummer) {
+    public void setTicketnummer(String ticketnummer) {
         this.ticketnummer = ticketnummer;
     }
 
