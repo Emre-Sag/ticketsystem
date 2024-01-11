@@ -4,6 +4,7 @@ import de.ticketsystem.webtech.repository.TicketRepository;
 import de.ticketsystem.webtech.unternehmen.TicketEntitiy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class TicketService {
@@ -20,5 +21,9 @@ public class TicketService {
 
     public void delete(Long id) {
         repo.deleteById(id);
+    }
+
+    public List<TicketEntitiy> getAllTickets() {
+        return (List<TicketEntitiy>) repo.findAll();
     }
 }
