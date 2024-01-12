@@ -3,8 +3,10 @@ package de.ticketsystem.webtech.web;
 import de.ticketsystem.webtech.service.TicketService;
 import de.ticketsystem.webtech.unternehmen.TicketEntitiy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:8081")
@@ -36,6 +38,25 @@ public class TicketRestController {
     @GetMapping("/tickets")
     public List<TicketEntitiy> getAllTickets() {
         return service.getAllTickets();
+    }
+
+    @PutMapping("/ticket/{id}")
+    public ResponseEntity<TicketEntitiy> updateTicket(@PathVariable String id, @RequestBody TicketEntitiy updatedTicket) {
+        try {
+            Long ticketId = Long.parseLong(id);
+
+            TicketEntitiy existingTicket = service.get(ticketId);
+
+            existingTicket.setBetreff(updatedTicket.getBetreff());
+            existingTicket.setNachricht(updatedTicket.getNachricht());
+            existingTicket.setStatus(updatedTicket.getStatus());
+
+            TicketEntitiy savedTicket = service.save(existingTicket);
+
+            return ResponseEntity.ok(savedTicket);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
     }
 }
 
