@@ -1,6 +1,7 @@
 package de.ticketsystem.webtech.unternehmen;
 
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 import java.util.UUID;
 
@@ -21,16 +22,19 @@ public class TicketEntitiy {
     @Column(name = "nachricht", nullable = false)
     private String nachricht;
 
-    @Column(name = "status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private TicketStatus status;
+
+    @Column(name = "erstelltAm", nullable = false)
+    private LocalDateTime erstelltAm;
 
     @PrePersist
     private void generateTicketnummer(){
         this.ticketnummer = UUID.randomUUID().toString();
+        this.erstelltAm = LocalDateTime.now();
     }
-    public TicketEntitiy(Long id, String ticketnummer, String betreff, String nachricht, String status){
-        this.id = id;
-        this.ticketnummer = ticketnummer;
+    public TicketEntitiy(String betreff, String nachricht, TicketStatus status){
         this.betreff = betreff;
         this.nachricht = nachricht;
         this.status = status;
@@ -66,11 +70,23 @@ public class TicketEntitiy {
         this.nachricht = nachricht;
     }
 
-    public String getStatus() {
+    public TicketStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(TicketStatus status) {
         this.status = status;
+    }
+
+    public LocalDateTime getErstelltAm() {
+        return erstelltAm;
+    }
+
+    public void setErstelltAm(LocalDateTime erstelltAm) {
+        this.erstelltAm = erstelltAm;
+    }
+
+    public enum TicketStatus {
+        GELÖST, OFFEN, WARTEND, IN_BEARBEITUNG
     }
 }

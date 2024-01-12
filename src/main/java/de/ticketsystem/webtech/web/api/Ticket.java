@@ -1,18 +1,22 @@
 package de.ticketsystem.webtech.web.api;
 
+import java.time.LocalDateTime;
+
 public class Ticket {
     private long id;
     private String ticketnummer;
     private String betreff;
     private String nachricht;
     private String status;
+    private LocalDateTime erstelltAm;
 
-    public Ticket(Long id, String ticketnummer, String betreff, String nachricht, String status){
+    public Ticket(Long id, String ticketnummer, String betreff, String nachricht, String status, LocalDateTime erstelltAm){
         this.id = id;
         this.ticketnummer = ticketnummer;
         this.betreff = betreff;
         this.nachricht = nachricht;
         this.status = status;
+        this.erstelltAm = erstelltAm;
     }
 
     public long getId() {
@@ -52,5 +56,13 @@ public class Ticket {
     }
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public LocalDateTime getErstelltAm() {
+        return erstelltAm;
+    }
+
+    public void setErstelltAm(LocalDateTime erstelltAm) {
+        this.erstelltAm = erstelltAm;
     }
 }
