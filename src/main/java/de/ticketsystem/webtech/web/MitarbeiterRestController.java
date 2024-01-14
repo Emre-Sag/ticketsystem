@@ -10,19 +10,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class MitarbeiterRestController {
 
-    /** private List<Mitarbeiter> mitarbeiter;
-
-    public MitarbeiterRestController() {
-        mitarbeiter = new ArrayList<>();
-        mitarbeiter.add(new Mitarbeiter(1, "Emre", "Sag", 1000, "Emre.Sag@Student.HTW-berlin.de"));
-        mitarbeiter.add(new Mitarbeiter(2, "Zeren", "Kanber", 1001, "Zeren.Kanber@Student.HTW-berlin.de"));
-    }
-
-    @GetMapping(path = "/api/v1/mitarbeiter")
-    public ResponseEntity<List<Mitarbeiter>>fetchMitarbeiter(){
-        return ResponseEntity.ok(mitarbeiter);
-    } */
-
     @Autowired
     MitarbeiterService service;
 
@@ -31,7 +18,6 @@ public class MitarbeiterRestController {
         return service.save(mitarbeiter);
     }
 
-    @CrossOrigin(origins = "http://localhost:8081")
     @GetMapping("/mitarbeiter/{id}")
     public MitarbeiterEntitiy getMitarbeiter(@PathVariable String id){
         Long  mitarbeiterId = Long.parseLong(id);
@@ -50,6 +36,14 @@ public class MitarbeiterRestController {
         return ResponseEntity.ok("Mitarbeiter mit der ID " + mitarbeiterId + " wurde erfolgreich gelöscht.");
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody MitarbeiterEntitiy request) {
+        MitarbeiterEntitiy user = service.getByBenutzername(request.getBenutzername());
+
+        if (user != null && user.getPasswort().equals(request.getPasswort())) {
+            return ResponseEntity.ok("Login successful");
+        } else {
+            return ResponseEntity.status(401).body("Invalid username or password");
+        }
+    }
 }
-
-

@@ -21,6 +21,10 @@ public class MitarbeiterService {
         return repo.findById(id).orElseThrow(() -> new RuntimeException());
     }
 
+    public MitarbeiterEntitiy getByBenutzername(String benutzername) {
+        return repo.findByBenutzername(benutzername);
+    }
+
     public void delete(Long id) {
         repo.deleteById(id);
     }

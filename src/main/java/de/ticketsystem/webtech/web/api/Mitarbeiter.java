@@ -7,13 +7,19 @@ public class Mitarbeiter {
     private String nachname;
     private long personalnummer;
     private String mailadresse;
+    private String benutzername;
+    private String passwort;
+    private String mitarbeiterBereich;
 
-    public Mitarbeiter(long id, String vorname, String nachname, long personalnummer, String mailadresse) {
+    public Mitarbeiter(long id, String vorname, String nachname, long personalnummer, String mailadresse, String benutzername, String passwort, String mitarbeiterBereich) {
         this.id = id;
         this.vorname = vorname;
         this.nachname = nachname;
         this.personalnummer = personalnummer;
         this.mailadresse = mailadresse;
+        this.benutzername = benutzername;
+        this.passwort = passwort;
+        this.mitarbeiterBereich = mitarbeiterBereich;
     }
 
     public long getId() {
@@ -54,5 +60,29 @@ public class Mitarbeiter {
 
     public void setMailadresse(String mailadresse) {
         this.mailadresse = mailadresse;
+    }
+
+    public String getBenutzername() {
+        return benutzername;
+    }
+
+    public void setBenutzername(String benutzername) {
+        this.benutzername = benutzername;
+    }
+
+    public String getPasswort() {
+        return passwort;
+    }
+
+    public void setPasswort(String passwort) {
+        this.passwort = passwort;
+    }
+
+    public String getMitarbeiterBereich() {
+        return mitarbeiterBereich;
+    }
+
+    public void setMitarbeiterBereich(String mitarbeiterBereich) {
+        this.mitarbeiterBereich = mitarbeiterBereich;
     }
 }

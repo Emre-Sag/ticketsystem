@@ -22,11 +22,25 @@ public class MitarbeiterEntitiy {
     @Column(name = "mailadresse")
     private String mailadresse;
 
-    public MitarbeiterEntitiy(String vorname, String nachname, long personalnummer, String mailadresse) {
+    @Column(name = "benutzername", nullable = false, unique = true)
+    private String benutzername;
+
+    @Column(name = "passwort", nullable = false)
+    private String passwort;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "MitarbeiterBereich", nullable = false)
+    private MitarbeiterBereich mitarbeiterBereich;
+
+
+    public MitarbeiterEntitiy(String vorname, String nachname, long personalnummer, String mailadresse, String benutzername, String passwort, MitarbeiterBereich mitarbeiterBereich) {
         this.vorname = vorname;
         this.nachname = nachname;
         this.personalnummer = personalnummer;
         this.mailadresse = mailadresse;
+        this.benutzername = benutzername;
+        this.passwort = passwort;
+        this.mitarbeiterBereich = mitarbeiterBereich;
     }
 
     protected MitarbeiterEntitiy() {}
@@ -65,5 +79,33 @@ public class MitarbeiterEntitiy {
 
     public void setMailadresse(String mailadresse) {
         this.mailadresse = mailadresse;
+    }
+
+    public String getBenutzername() {
+        return benutzername;
+    }
+
+    public void setBenutzername(String benutzername) {
+        this.benutzername = benutzername;
+    }
+
+    public String getPasswort() {
+        return passwort;
+    }
+
+    public void setPasswort(String passwort) {
+        this.passwort = passwort;
+    }
+
+    public MitarbeiterBereich getMitarbeiterBereich() {
+        return mitarbeiterBereich;
+    }
+
+    public void setMitarbeiterBereich(MitarbeiterBereich mitarbeiterBereich) {
+        this.mitarbeiterBereich = mitarbeiterBereich;
+    }
+
+    public enum MitarbeiterBereich {
+        FACHLICHER_MITARBEITER, IT_MITARBEITER
     }
 }
