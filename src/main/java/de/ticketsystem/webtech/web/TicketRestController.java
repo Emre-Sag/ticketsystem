@@ -58,5 +58,16 @@ public class TicketRestController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
+
+    @GetMapping("/ticketByTicketnummer/{ticketnummer}")
+    public ResponseEntity<?> getTicketByTicketnummer(@PathVariable String ticketnummer) {
+        TicketEntitiy ticket = service.getTicketByTicketnummer(ticketnummer);
+        if (ticket != null) {
+            return ResponseEntity.ok(ticket);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ticket not found");
+        }
+    }
+
 }
 

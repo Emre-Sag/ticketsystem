@@ -23,6 +23,11 @@ public class TicketService {
         repo.deleteById(id);
     }
 
+    public TicketEntitiy getTicketByTicketnummer(String ticketnummer) {
+        TicketEntitiy ticket = repo.findByTicketnummer(ticketnummer).orElse(null);
+        return ticket;
+    }
+
     public List<TicketEntitiy> getAllTickets() {
         return (List<TicketEntitiy>) repo.findAll();
     }
