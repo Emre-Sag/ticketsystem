@@ -29,6 +29,10 @@ public class TicketEntitiy {
     @Column(name = "erstelltAm", nullable = false)
     private LocalDateTime erstelltAm;
 
+    @Column(name = "kommentar")
+    private String kommentar;
+
+
     @PrePersist
     private void generateTicketnummer(){
         this.ticketnummer = UUID.randomUUID().toString();
@@ -84,6 +88,14 @@ public class TicketEntitiy {
 
     public void setErstelltAm(LocalDateTime erstelltAm) {
         this.erstelltAm = erstelltAm;
+    }
+
+    public String getKommentar() {
+        return kommentar;
+    }
+
+    public void setKommentar(String kommentar) {
+        this.kommentar = kommentar;
     }
 
     public enum TicketStatus {

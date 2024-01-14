@@ -10,13 +10,16 @@ public class Ticket {
     private String status;
     private LocalDateTime erstelltAm;
 
-    public Ticket(Long id, String ticketnummer, String betreff, String nachricht, String status, LocalDateTime erstelltAm){
+    private String kommentar;
+
+    public Ticket(Long id, String ticketnummer, String betreff, String nachricht, String status, LocalDateTime erstelltAm, String kommentar){
         this.id = id;
         this.ticketnummer = ticketnummer;
         this.betreff = betreff;
         this.nachricht = nachricht;
         this.status = status;
         this.erstelltAm = erstelltAm;
+        this.kommentar = kommentar;
     }
 
     public long getId() {
@@ -64,5 +67,13 @@ public class Ticket {
 
     public void setErstelltAm(LocalDateTime erstelltAm) {
         this.erstelltAm = erstelltAm;
+    }
+
+    public String getKommentar() {
+        return kommentar;
+    }
+
+    public void setKommentar(String kommentar) {
+        this.kommentar = kommentar;
     }
 }

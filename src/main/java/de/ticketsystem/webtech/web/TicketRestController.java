@@ -50,6 +50,7 @@ public class TicketRestController {
             existingTicket.setBetreff(updatedTicket.getBetreff());
             existingTicket.setNachricht(updatedTicket.getNachricht());
             existingTicket.setStatus(updatedTicket.getStatus());
+            existingTicket.setKommentar(updatedTicket.getKommentar());
 
             TicketEntitiy savedTicket = service.save(existingTicket);
 
