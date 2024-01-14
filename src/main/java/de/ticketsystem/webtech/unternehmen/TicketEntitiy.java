@@ -19,7 +19,7 @@ public class TicketEntitiy {
     @Column(name = "betreff", nullable = false)
     private String betreff;
 
-    @Column(name = "nachricht", nullable = false)
+    @Column(name = "nachricht", nullable = false, length = 10000)
     private String nachricht;
 
     @Enumerated(EnumType.STRING)
