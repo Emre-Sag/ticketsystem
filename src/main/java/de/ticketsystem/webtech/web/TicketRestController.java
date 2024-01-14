@@ -59,9 +59,9 @@ public class TicketRestController {
         }
     }
 
-    @GetMapping("/ticketByTicketnummer/{ticketnummer}")
-    public ResponseEntity<?> getTicketByTicketnummer(@PathVariable String ticketnummer) {
-        TicketEntitiy ticket = service.getTicketByTicketnummer(ticketnummer);
+    @GetMapping("/ticketByTicketnummer/{ticketid}") // Änderung hier
+    public ResponseEntity<?> getTicketByTicketnummer(@PathVariable String ticketid) {
+        TicketEntitiy ticket = service.getTicketByTicketnummer(ticketid);
         if (ticket != null) {
             return ResponseEntity.ok(ticket);
         } else {
